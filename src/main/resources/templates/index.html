@@ -1,0 +1,249 @@
+<!-- src/main/resources/templates/index.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>Test</title>
+    <div th:replace="fragments/bootstrap :: bootstrap"></div>
+    <style>
+      .banner {
+          padding: 0 0 9rem 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+
+      .left-section {
+          display: flex;
+          flex-direction: column;
+          width: 55%;
+          margin: 2rem 0rem 2rem 2rem;
+      }
+
+      .banner-text {
+          margin: 3rem 2rem 3rem 2rem;
+
+          font-size: 2.8rem;
+          color: #212529;
+          font-weight: bold;
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+          font-weight: 600;
+      }
+
+      .banner-inner-text {
+          margin-left: 2rem;
+          margin-right: 2rem;
+          font-size: 22px;
+          color: #6c757d;
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+      }
+
+      .mail-image {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 30%;
+      }
+
+      .right-section {
+          display: flex;
+          width: 45%;
+      }
+
+      .banner-logo {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 80%;
+      }
+
+      .dark-container {
+          padding: 3rem;
+          margin: 0;
+
+          background-color: #212529;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+      }
+
+      .left-container {
+          display: flex;
+          flex-direction: column;
+          width: 45%;
+          margin: 1rem;
+      }
+
+      .heading-text {
+          margin: 1rem;
+
+          font-size: 3rem;
+          color: #fff;
+
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+      }
+
+      .container-list {
+          list-style: none;
+          font-size: 18px;
+          color: #fff;
+      }
+
+      .container-list-image {
+          width: 3%;
+          display: inline-block;
+          margin: 10px;
+      }
+
+      .right-container {
+          display: flex;
+          width: 55%
+      }
+
+      .feature-section {
+          padding: 3rem;
+      }
+
+      .feature-heading {
+          margin: 2rem;
+          padding: 0 4rem;
+          font-size: 3.2rem;
+          color: #212529;
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+      }
+
+      .card-row {
+          padding: 0rem 1rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+
+      .card {
+          padding: 1.5rem;
+          margin: 1rem;
+          width: 45%;
+          background-color: #6f4da2;
+          border-radius: 1rem;
+          height: 10rem;
+      }
+
+      .card-2 {
+          padding: 1rem;
+          margin: 1rem;
+          width: 45%;
+          background-color: #198754;
+          border-radius: 1rem;
+          height: 7rem;
+      }
+
+      .card-heading {
+          font-size: 2.6rem;
+          color: #fff;
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+
+      }
+
+      .card-content {
+          font-size: 1.3rem;
+          color: #fff;
+          letter-spacing: normal;
+          font-family: 'Inter', sans-serif;
+      }
+
+    a:link {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="banner">
+    <div class="left-section">
+        <div class="banner-text">Welcome to<br>Cloud Native Messaging System</div>
+        <div class="banner-inner-text">Re-designed using Cloud First Technologies</div>
+    </div>
+    <div class="right-section">
+        <img class="banner-logo" th:src="@{/images/banner-logo.png}" alt="mail">
+    </div>
+</div>
+
+<div class="dark-container">
+    <div class="left-container">
+        <div class="heading-text">Highlight Features</div>
+        <ul class="container-lists">
+            <li class="container-list"><img class="container-list-image" th:src="@{/images/checkbox.png}"/>Direct and
+                Group Messages
+            </li>
+            <li class="container-list"><img class="container-list-image" th:src="@{/images/checkbox.png}"/>Long threads
+                of continuous conversation
+            </li>
+            <li class="container-list"><img class="container-list-image" th:src="@{/images/checkbox.png}"/>Easy Sign Up
+                and Login
+            </li>
+            <li class="container-list"><img class="container-list-image" th:src="@{/images/checkbox.png}"/>Fast and
+                Responsive System
+            </li>
+
+        </ul>
+    </div>
+    <div class="right-container">
+        <img class="banner-logo" th:src="@{/images/bootstrap-email-support.png}" alt="mail">
+    </div>
+</div>
+
+<div class="feature-section">
+    <div class="feature-heading">Features</div>
+
+    <div class="card-row">
+        <div class="card">
+            <p class="card-heading">Highly Available</p>
+            <p class="card-content">Always there when you need it</p>
+        </div>
+        <div class="card">
+            <p class="card-heading">Highly Scalable</p>
+            <p class="card-content">Designed keeping future scalability of infrastructure in mind</p>
+        </div>
+        <div class="card">
+            <p class="card-heading">Easy to use</p>
+            <p class="card-content">Simple, Intuitive User interfaces for productivity</p>
+        </div>
+        <div class="card">
+            <p class="card-heading">Cloud Native</p>
+            <p class="card-content">No vendor lock-in, optimized for cloud first</p>
+        </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center">
+
+            <div class="card-2">
+                <a th:href="@{/oauth2/authorization/auth0}">
+                <div class="d-flex justify-content-center">
+                    <p class="card-heading">Get Started !</p>
+                </div>
+                </a>
+            </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
